@@ -24,11 +24,9 @@ export class RegisterComponent implements OnInit {
       email: '',
       password: ''
     });
-    console.log(this.form.valid);
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
     this.store.dispatch(registerAction(this.form.value));
   }
 }
