@@ -6,6 +6,7 @@ import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
+import { reducers } from "src/app/auth/store/actions/reducers";
 import { environment } from "src/environments/environment";
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
       maxAge: 25,
       logOnly: environment.production
     }),
+    StoreModule.forFeature('auth', reducers)
   ],
   declarations: [RegisterComponent]
 })
