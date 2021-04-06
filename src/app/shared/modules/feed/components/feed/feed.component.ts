@@ -6,6 +6,7 @@ import { getFeedAction } from "src/app/shared/modules/feed/store/actions/getFeed
 import { errorSelector, feedSelector, isLoadingSelector } from "src/app/shared/modules/feed/store/selectors";
 import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/GetFeedResponse.interfece";
 import { environment } from "src/environments/environment";
+import { parseUrl, stringify } from "query-string";
 
 @Component({
   selector: "mc-feed",
@@ -27,7 +28,6 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initializeValues();
-    this.fetchData();
     this.initializeListeners();
   }
 
@@ -45,10 +45,19 @@ export class FeedComponent implements OnInit, OnDestroy {
   initializeListeners(): void {
     this.queryParamsSubscription = this.route.queryParams.subscribe((params: Params) => {
       this.currentPage = Number(params.page || "1");
+      this.fetchFeed();
     });
   }
 
-  fetchData(): void {
-    this.store.dispatch(getFeedAction({url: this.apiUrlProps}));
+  fetchFeed(): void {
+    const offset = this.currentPage * this.limit - this.limit;
+    const parsedUrl = parseUrl(this.apiUrlProps); 
+    const stringifiedParams = stringify({
+      limit: this.limit,
+      offset,
+      ...parsedUrl.query
+    });
+    const apiUrlWithParams = `${parsedUrl.url}?&${stringifiedParams}`
+    this.store.dispatch(getFeedAction({url: apiUrlWithParams}));
   }
 }
