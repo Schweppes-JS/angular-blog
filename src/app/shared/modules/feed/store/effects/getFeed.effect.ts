@@ -4,7 +4,7 @@ import { of } from "rxjs";
 import { catchError, map, switchMap } from "rxjs/operators";
 import { FeedService } from "src/app/shared/modules/feed/services/feed.service";
 import { getFeedAction, getFeedFailureAction, getFeedSuccessAction } from "src/app/shared/modules/feed/store/actions/getFeed.action";
-import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/GetFeedResponse.interfece";
+import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/getFeedResponse.interfece";
 
 @Injectable()
 export class GetFeedEffect {

@@ -4,7 +4,7 @@ import { select, Store } from "@ngrx/store";
 import { Observable, Subscription } from "rxjs";
 import { getFeedAction } from "src/app/shared/modules/feed/store/actions/getFeed.action";
 import { errorSelector, feedSelector, isLoadingSelector } from "src/app/shared/modules/feed/store/selectors";
-import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/GetFeedResponse.interfece";
+import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/getFeedResponse.interfece";
 import { environment } from "src/environments/environment";
 import { parseUrl, stringify } from "query-string";
 

@@ -1,4 +1,4 @@
-import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/GetFeedResponse.interfece";
+import { GetFeedResponseInterface } from "src/app/shared/modules/feed/types/getFeedResponse.interfece";
 
 export interface FeedStateInterface {
   isLoading: boolean;

@@ -1,3 +1,4 @@
+import { FeedTogglerModule } from './../shared/modules/feedToggler/feedToggler.module';
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
@@ -19,7 +20,8 @@ const routes = [
     RouterModule.forChild(routes),
     FeedModule,
     BannerModule,
-    PopularTagsModule
+    PopularTagsModule,
+    FeedTogglerModule
   ],
   declarations: [GlobalFeedComponent]
 })
