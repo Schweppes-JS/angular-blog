@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { select, Store } from "@ngrx/store";
 import { combineLatest, Observable, Subscription } from "rxjs";
 import { map } from "rxjs/operators";
+import { deleteArticleAction } from "src/app/article/store/actions/deleteArticle.action";
 import { getArticleAction } from "src/app/article/store/actions/getArticle.action";
 import { articleSelector, errorSelector, isLoadingSelector } from "src/app/article/store/selectors";
 import { currentUserSelector } from "src/app/auth/store/selectors";
@@ -57,5 +58,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   fetchData(): void {
     this.store.dispatch(getArticleAction({slug: this.slug}))
+  }
+
+  deleteArticle(): void {
+    this.store.dispatch(deleteArticleAction({slug: this.slug}));
   }
 }

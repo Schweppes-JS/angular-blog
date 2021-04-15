@@ -4,6 +4,8 @@ import { RouterModule } from "@angular/router";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { ArticleComponent } from "src/app/article/components/article/article.component";
+import { ArticleService } from "src/app/article/services/article.service";
+import { DeleteArticleEffect } from "src/app/article/store/effects/deleteArticle.effect";
 import { GetArticleEffect } from "src/app/article/store/effects/getArticle.effect";
 import { reducers } from "src/app/article/store/reducers";
 import { ErrorMessageModule } from "src/app/shared/modules/errorMessage/errorMessage.module";
@@ -24,14 +26,14 @@ const routes = [
     RouterModule,
     ErrorMessageModule,
     LoadingModule,
-    EffectsModule.forFeature([GetArticleEffect]),
+    EffectsModule.forFeature([GetArticleEffect, DeleteArticleEffect]),
     StoreModule.forFeature('article', reducers),
     RouterModule.forChild(routes),
     TagListModule
   ],
   declarations: [ArticleComponent],
   exports: [],
-  providers: [SharedArticleService]
+  providers: [SharedArticleService, ArticleService]
 })
 export class ArticleModule {
 
