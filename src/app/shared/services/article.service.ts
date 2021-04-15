@@ -9,8 +9,8 @@ import { environment } from "src/environments/environment";
 @Injectable()
 export class ArticleService {
   constructor(private http: HttpClient) {}
-  getArticle(slug: string): Observable<ArticleInterface> {
-    const fullUrl = `${environment.apiUrl}/article/${slug}`;
+  getArticle(slug: string | null): Observable<ArticleInterface> {
+    const fullUrl = `${environment.apiUrl}/articles/${slug}`;
 
     return this.http.get<GetArticleResponseInterface>(fullUrl).pipe(map((response: GetArticleResponseInterface) => response.article));
   }
