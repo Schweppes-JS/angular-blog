@@ -1,7 +1,7 @@
 import { state } from "@angular/animations";
 import { Action, createReducer, on } from "@ngrx/store";
 import { createArticleAction, createArticleFailureAction, createArticleSuccessAction } from "src/app/createArticle/store/actions/createArticle.action";
-import { CreateArticleStateInterface } from "src/app/createArticle/store/types/createArticleState.interface";
+import { CreateArticleStateInterface } from "src/app/createArticle/types/createArticleState.interface";
 
 const intialState: CreateArticleStateInterface = {
   isSubmitting: false,

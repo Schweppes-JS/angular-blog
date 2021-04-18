@@ -8,7 +8,7 @@ import { BackendErrorsInterface } from "src/app/shared/types/backendErrors.inter
   templateUrl: "./articleForm.component.html"
 })
 export class ArticleFormComponent implements OnInit {
-  @Input("initialValues") initialValuesProps!: ArticleInputInterface;
+  @Input("initialValues") initialValuesProps!: ArticleInputInterface | null;
   @Input("isSubmitting") isSubmittingProps!: boolean | null;
   @Input("errors") errorsProps!: BackendErrorsInterface | null;
 
@@ -24,10 +24,10 @@ export class ArticleFormComponent implements OnInit {
 
   initializeForm(): void {
     this.form = this.fb.group({
-      title: this.initialValuesProps.title,
-      description: this.initialValuesProps.description,
-      body: this.initialValuesProps.body,
-      tagList: this.initialValuesProps.tagList.join(' ')
+      title: this.initialValuesProps!.title,
+      description: this.initialValuesProps!.description,
+      body: this.initialValuesProps!.body,
+      tagList: this.initialValuesProps!.tagList.join(' ')
     });
   }
 
