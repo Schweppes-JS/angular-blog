@@ -9,7 +9,7 @@ import { BackendErrorsInterface } from "src/app/shared/types/backendErrors.inter
 })
 export class ArticleFormComponent implements OnInit {
   @Input("initialValues") initialValuesProps!: ArticleInputInterface;
-  @Input("isSubmitting") isSubmittingProps!: boolean;
+  @Input("isSubmitting") isSubmittingProps!: boolean | null;
   @Input("errors") errorsProps!: BackendErrorsInterface | null;
 
   @Output("articleSubmit") articleSubmitEvent = new EventEmitter<ArticleInputInterface>();

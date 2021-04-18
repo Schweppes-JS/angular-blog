@@ -7,7 +7,6 @@ import { registerAction } from "src/app/auth/store/actions/register.action";
 import { isSubmittingSelector, validationErrorsSelector } from "src/app/auth/store/selectors";
 import { RegisterRequestInterface } from "src/app/auth/types/registerRequest.interface";
 import { BackendErrorsInterface } from "src/app/shared/types/backendErrors.interface";
-import { CurrentUserInterface } from "src/app/shared/types/currentUser.interface";
 
 @Component({
   selector: "mc-register",
