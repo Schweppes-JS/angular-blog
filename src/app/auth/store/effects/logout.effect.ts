@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { url } from "node:inspector";
 import { tap } from "rxjs/operators";
 import { PersistanceService } from "src/app/shared/services/persistence.service";
 import { logoutAction } from "../sync.action";
