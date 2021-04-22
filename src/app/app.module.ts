@@ -20,6 +20,7 @@ import { ArticleModule } from "src/app/article/article.module";
 import { CreateArticleModule } from "src/app/createArticle/createArticle.module";
 import { EditArticleModule } from "src/app/editArticle/editArticle.module";
 import { SettingsModule } from "src/app/settings/settings.module";
+import { UserProfileModule } from "src/app/userProfile/userProfile.module";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SettingsModule } from "src/app/settings/settings.module";
     CreateArticleModule,
     ArticleModule,
     EditArticleModule,
-    SettingsModule
+    SettingsModule,
+    UserProfileModule
   ],
   providers: [
     PersistanceService,
